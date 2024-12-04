@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON Galaxy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+</head>
+<body>
+    <div id="walletConnected" class="wallet-connected">
+        <span class="wallet-address"></span>
+        <button id="disconnectWallet" class="disconnect-wallet">Disconnect Wallet</button>
+    </div>
+    
+    <div class="logo">
+        <img src="logo.png" alt="Logo" width="400">
+    </div>
+    
+    <div id="preConnectBalances" class="balance-container">
+        <div class="balance-item">
+            <span class="balance-label">TON:</span>
+            <span class="balance-value">0.00</span>
+        </div>
+        <div class="balance-item">
+            <span class="balance-label">TON Galaxy:</span>
+            <span class="balance-value">0.00</span>
+        </div>
+    </div>
+    
+    <button id="connectWallet" class="connect-wallet">Connect Wallet</button>
+    
+    <div id="walletInput" class="wallet-input" style="display: none;">
+        <input type="text" id="walletAddress" placeholder="Enter TON Wallet Address">
+        <button id="verifyWallet" class="verify-wallet">Verify</button>
+    </div>
+    
+    <div id="postConnectBalances" class="balance-container" style="display: none;">
+        <div class="balance-option">
+            <span class="balance-label">TON Balance:</span>
+            <span id="tonBalance" class="balance-value">0.00</span>
+            <button class="balance-action" id="withdrawTon">Withdraw</button>
+        </div>
+        <div class="balance-option">
+            <span class="balance-label">TON Galaxy Balance:</span>
+            <span id="galaxyBalance" class="balance-value">0.00</span>
+            <button class="balance-action" id="convertGalaxy">Convert</button>
+        </div>
+    </div>
+    
+    <div class="options">
+        <div class="option">
+            <i class="fas fa-user-friends"></i> Referral
+        </div>
+        <div class="option" id="gamesOption">
+            <i class="fas fa-gamepad"></i> Games
+        </div>
+        <div class="option">
+            <i class="fas fa-tasks"></i> Missions
+        </div>
+    </div>
+
+    <div id="gameSection" class="game-section" style="display: none;">
+        <div class="game-container">
+            <h2>Games</h2>
+            <div class="game-list">
+                <div class="game-card" id="game1">
+                    <img src="games/pull_up_game/assets/thumnail.png" alt="Monkey Game">
+                    <h3>Pull Up Game</h3>
+                    <p>Swipe up to help the monkey reach the top!</p>
+                    <button class="play-button" onclick="launchGame()">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
